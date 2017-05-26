@@ -31,7 +31,7 @@
   * The contents of each list item should be the value returned by the `toString` method
   * Each list item should have a unique class added to it which will be used later for a DOM query.
   * The odd numbered list items should have a grey colored background.
-* Populate the options of the select tag using the values in this array.
+* Create a select tag and populate the options using the values in this array.
   * The contents of each option tag should be the value returned by the `toString`.
   * The `value` attribute of each option tag should contain the value of the `number` attribute.
 * Bind an event handler to the change event of the select tag.
