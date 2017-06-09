@@ -7,32 +7,13 @@
   <title>Document</title>
 </head>
 <body>
-  <select></select>
-  <ul></ul>
-  <div id="test">
+  <select id="wbSelect">
 
-  </div>
-  <script>
-    let data;
-    var request = new XMLHttpRequest();
-    request.open("GET", "/data");
-    request.onload = function () {
-      if (request.status === 200) {
-        data = JSON.parse(request.responseText);
+  </select>
+  <ul id="wbList">
 
-      } else {
-        console.log("Error: Request Status " + request.status);
-      }
-    }
-    request.send();
-
-    // function load() {
-    //     if (request.status === 200) {
-    //      return request.responseText;
-    //     } else {
-    //       console.log("Error: Request Status " + request.status);
-    //     }
-    // }
+  </ul>
+  <script src="script.js">
   </script>
 </body>
 </html>
