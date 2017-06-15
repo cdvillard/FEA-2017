@@ -1,4 +1,4 @@
-
+(function() {
 let arr = [];
 const ulItem = document.getElementById("wbList");
 const selItem = document.getElementById("wbSelect");
@@ -13,9 +13,9 @@ ulItem.addEventListener("click", function(e) {
 
 function wreckRed() {
   let list = ulItem.getElementsByTagName("li");
-  for (let i = 0; i < list.length; i++) {console.log(list[i]); list[i].style.color = "black"};
+  for (let i = 0; i < list.length; i++) { list[i].style.color = "black" };
   let val = this.selectedOptions[0].value;
-  let selected = ulItem.getElementsByClassName("wbItem-"+val)[0];
+  let selected = ulItem.getElementsByClassName("wbItemNo-"+val)[0];
   selected.style.color = "red";
 }
 
@@ -42,8 +42,6 @@ WreckingBall.prototype.toString = function wbToString() {
   if (res == "") {
     res = num.toString();
   }
-  
-  console.log(res);
   return res;
 }
 
@@ -52,7 +50,6 @@ function unique(value, index, self) {
 }
 
 function loadData(callback) {
-  console.log("loadData() is being called.")
   let request = new XMLHttpRequest();
 
   request.open("GET", "/data", true);
@@ -64,14 +61,7 @@ function loadData(callback) {
       } else {
         console.log("Error: Request Status " + request.status);
       }
-  }
-
-  request.onreadystatechange = function () {
-    console.log(request.readyState);
-    console.log(request.status);
-    console.log(request.statusText);
-  }
-  
+  }  
 }
 
 function wreckThePage(response) {
@@ -92,7 +82,7 @@ function arrayData(response) {
 function buildList(array) {
   for(let i in array) {
     let liItem = document.createElement("li");
-    liItem.className = "wbItem-" + array[i].number.toString();
+    liItem.className = "wbItem wbItemNo-" + array[i].number.toString();
     liItem.innerText = array[i].toString();
     ulItem.appendChild(liItem);
   }
@@ -108,3 +98,4 @@ function buildOptions(array) {
   }
 }
 
+})();

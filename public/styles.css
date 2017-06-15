@@ -1,0 +1,20 @@
+.container {
+  margin: 0 auto;
+  width: 80vw;
+  max-width: 600px;
+  padding: 20px 15px;
+  border: 1px solid #ddd;
+}
+.container > #wbList {
+  padding: 0;
+  margin: 20px 0;
+}
+.container > #wbList > .wbItem {
+  padding: 5px 0 5px 5px;
+  margin: 0;
+  list-style: none;
+}
+.container > #wbList > .wbItem:nth-of-type(odd) {
+  background: #ededed;
+
+}
